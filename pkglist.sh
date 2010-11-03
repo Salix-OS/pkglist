@@ -1,4 +1,21 @@
 #!/bin/sh
+#
+# This program is free software. It comes without any warranty, to
+# the extent permitted by applicable law. You can redistribute it
+# and/or modify it under the terms of the Do What The Fuck You Want
+# To Public License, Version 2, as published by Sam Hocevar. See
+# http://sam.zoy.org/wtfpl/COPYING for more details.
+#
+# Frédéric Galusik <fredg (AT) salixos (dot) org>
+#
+# pkglist.sh
+#
+# list pkg-slkbuild-source on a single webpage
+# http://salix.enialis.net/i486/13.1/source/pkglist.html
+#
+# TODO: table, style/css
+# TODO: simple search engine
+# TODO: think about other $arch, $release ...
 
 REPO="http://salix.enialis.net/i486/13.1/source/"
 HTML="pkglist.html"
