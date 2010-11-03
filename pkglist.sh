@@ -19,7 +19,7 @@
 
 REPO="http://salix.enialis.net/i486/13.1/source/"
 HTML="pkglist.html"
-TITLE="SalixOS Packages"
+TITLE="SalixOS Packages (i486)"
 
 echo "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"
   \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">
@@ -44,18 +44,20 @@ padding: 2em;
 <body>
 <h2>$TITLE</h2>
 <hr />
-<table with=\"80%\" cellspading=0>
+<table with=\"80%\" cellspading=1>
+<tr><td><b>Name</b></td><td><b>Build Script</b></td><td><b>Source Directory</b></td></tr>
 " > $HTML
 
 ls -d */* | sed -e s@^@$REPO@g | sort -f -t / -k 8 | \
 while IFS=/ read prot z rep arch rel src cat pkg
     do
-        printf "%s: <a href=\"%s//%s/%s/%s/%s/%s/%s/SLKBUILD\">SLKBUILD</a> \
-- <a href=\"%s//%s/%s/%s/%s/%s/%s/\">source</a><br \>\n" \
+        printf "<tr><td>%s</td><td><a href=\"%s//%s/%s/%s/%s/%s/%s/SLKBUILD\">SLKBUILD</a></td><td><a href=\"%s//%s/%s/%s/%s/%s/%s/\">source</a></td></tr>\n" \
 $pkg $prot $rep $arch $rel $src $cat $pkg $prot $rep $arch $rel $src $cat $pkg
     done >> $HTML
 
-printf "
+echo "
+</table>
+<hr />
 </body>
 </html>" >> $HTML
 
