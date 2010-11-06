@@ -12,11 +12,12 @@
 # list pkgname-slkbuild-source on a single webpage
 #
 
-REPO="http://salix.enialis.net/i486/13.1/source/"
-HTML="pkglist32.html"
-TITLE="Salix packages list (32bits)"
-ARCH64="Salix packages list (64bits)"
-REPO64="http://salix.enialis.net/x86_64/13.1/source/pkglist64.html"
+REPO="http://salix.enialis.net/x86_64/13.1/source/"
+HTML="pkglist64.html"
+TITLE="Salix packages list (64bits)"
+ARCH32="Salix packages list (32bits)"
+REPO32="http://salix.enialis.net/i486/13.1/source/pkglist32.html"
+
 # small check & backup
 if [ ! -f $HTML ]
     then
@@ -198,7 +199,7 @@ td {
           <div class=\"title\">$TITLE</div>
           <div class=\"content\">
             <p><a href=\"http://salixos.org/\" target=\"_blank\">Salix</a> is a linux distribution based on Slackware that is simple and easy to use. Salix aims to be completely backwards compatible with Slackware, so Slackware users can benefit from Salix repositories.</p>
-            <p><a href=\"$REPO64\" target=\"_blank\">$ARCH64</a></p>
+            <p><a href=\"$REPO32\" target=\"_blank\">$ARCH32</a></p>
         </div>
     </div>
 </div>
