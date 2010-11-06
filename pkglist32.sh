@@ -6,19 +6,14 @@
 # To Public License, Version 2, as published by Sam Hocevar. See
 # http://sam.zoy.org/wtfpl/COPYING for more details.
 #
+#
 # Frédéric Galusik <fredg (AT) salixos (dot) org>
 #
-# pkglist.sh
+# list pkgname-slkbuild-source on a single webpage
 #
-# list pkg-slkbuild-source on a single webpage
-# http://salix.enialis.net/i486/13.1/source/pkglist.html
-#
-# TODO: table, style/css
-# TODO: simple search engine
-# TODO: think about other $arch, $release ...
 
 REPO="http://salix.enialis.net/i486/13.1/source/"
-HTML="pkglist.html"
+HTML="pkglist32.html"
 TITLE="Salix packages list (32bits)"
 ARCH2="Salix packages list (64bits)"
 
@@ -222,8 +217,5 @@ $pkg $prot $rep $arch $rel $src $cat $pkg $prot $rep $arch $rel $src $cat $pkg
 
 echo "
 </table>
-<hr />
 </body>
 </html>" >> $HTML
-
-
