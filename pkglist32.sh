@@ -199,6 +199,7 @@ td {
           <div class=\"content\">
             <p><a href=\"http://salixos.org/\" target=\"_blank\">Salix</a> is a linux distribution based on Slackware that is simple and easy to use. Salix aims to be completely backwards compatible with Slackware, so Slackware users can benefit from Salix repositories.</p>
             <p><a href=\"$REPO64\" target=\"_blank\">$ARCH64</a></p>
+            <p>Please report any missing files, weird or not optimized SLKBUILDs in the dedicated <a href=\"http://www.salixos.org/forum/viewforum.php?f=22\">packages section</a> in our forum.</p>
         </div>
     </div>
 </div>
