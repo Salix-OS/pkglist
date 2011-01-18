@@ -13,7 +13,6 @@
 # list pkgname-slkbuild-source on a single webpage
 #
 
-
 ##
 # var
 ##
@@ -21,32 +20,34 @@
 # if not null, have to fix sort -k
 LOCALDIR=""
 
-
 ##
 # fixe
 ##
 if [ "$(pwd | sed 's/.*x86_64.*/64/')" == "64" ] ; then
-ARCHREP="x86_64"
-else
-ARCHREP="i486"
-fi
-REPO="http://download.salixos.org/$ARCHREP/13.1/source/"
 
-if [ "$(echo $REPO | sed 's/.*x86_64.*/64/')" == "64" ] ; then
 CURRARCH="64"
 OTHERARCH="32"
-OTHERREPO="$(echo $REPO | sed 's/x86_64/i486/')"
+REPO="http://download.salixos.org/x86_64/13.1/source/"
+OTHERREPO="http://download.salixos.org/i486/13.1/source/"
+
 else
 CURRARCH="32"
 OTHERARCH="64"
-OTHERREPO="$(echo $REPO | sed 's/i486/x86_64/')"
+REPO="http://download.salixos.org/i486/13.1/source/"
+OTHERREPO="http://download.salixos.org/x86_64/13.1/source/"
+
 fi
 
+#
 TITLE="Salix packages list ("$CURRARCH"bits)"
 OTHERTITLE="Salix packages list ("$OTHERARCH"bits)"
-HTML=".pkglist"$CURRARCH".html"
+HTML="pkglist"$CURRARCH".html"
 OTHERHTML="pkglist"$OTHERARCH".html"
 
+##
+# total PKG
+##
+NBPKG="$(\ls -d1 $LOCALDIR*/* | wc -l)"
 
 ##
 # small check & backup
@@ -58,7 +59,6 @@ if [ ! -f $HTML ]
     else
         mv $HTML .$HTML.old
 fi
-
 
 ##
 # html/css
@@ -235,6 +235,7 @@ td {
           <div class=\"content\">
             <p><a href=\"http://salixos.org/\" target=\"_blank\">Salix</a> is a linux distribution based on Slackware that is simple and easy to use. Salix aims to be completely backwards compatible with Slackware, so Slackware users can benefit from Salix repositories.</p>
             <p><a href=\"$OTHERREPO$OTHERHTML\" target=\"_blank\">$OTHERTITLE</a></p>
+	    <p>Total Packages: $NBPKG</p>
             <p>Please report any missing files, weird or not optimized SLKBUILDs in the dedicated <a href=\"http://www.salixos.org/forum/viewforum.php?f=22\">packages section</a> in our forum.</p>
         </div>
     </div>
