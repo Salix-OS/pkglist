@@ -27,18 +27,17 @@ if [ "$(pwd | sed 's/.*x86_64.*/64/')" == "64" ] ; then
 
 CURRARCH="64"
 OTHERARCH="32"
-REPO="http://download.salixos.org/x86_64/13.1/source/"
-OTHERREPO="http://download.salixos.org/i486/13.1/source/"
+REPO="http://download.salixos.org/x86_64/13.37/source/"
+OTHERREPO="http://download.salixos.org/i486/13.37/source/"
 
 else
 CURRARCH="32"
 OTHERARCH="64"
-REPO="http://download.salixos.org/i486/13.1/source/"
-OTHERREPO="http://download.salixos.org/x86_64/13.1/source/"
+REPO="http://download.salixos.org/i486/13.37/source/"
+OTHERREPO="http://download.salixos.org/x86_64/13.37/source/"
 
 fi
 
-#
 TITLE="Salix packages list ("$CURRARCH"bits)"
 OTHERTITLE="Salix packages list ("$OTHERARCH"bits)"
 HTML="pkglist"$CURRARCH".html"
